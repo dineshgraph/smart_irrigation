@@ -8,17 +8,15 @@ const int oneWireBus = 4;
 OneWire oneWire(oneWireBus);
 DallasTemperature temp_sensors(&oneWire);
 
-void temperature_sensor_init() {
+void soil_temp_sensor_init() {
   temp_sensors.begin();
 }
 
-void temperature_sensor_check() {
+
+float soil_temperature_sensor_check() {
   temp_sensors.requestTemperatures(); 
-  float temperatureC = temp_sensors.getTempCByIndex(0);
-  float temperatureF = temp_sensors.getTempFByIndex(0);
-  Serial.print("Temperature: ");
-  Serial.print(temperatureC);
-  Serial.print("ºC , ");
-  Serial.print(temperatureF);
-  Serial.println("ºF");
+  float soil_temperatureC = temp_sensors.getTempCByIndex(0);
+  // float temperatureF = temp_sensors.getTempFByIndex(0); // optional if you don’t use it
+  return soil_temperatureC;
 }
+

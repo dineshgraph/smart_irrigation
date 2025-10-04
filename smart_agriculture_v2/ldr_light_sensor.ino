@@ -7,13 +7,13 @@ void ldr_sensor_init() {
   Serial.println("LDR Sensor Initialized");
 }
 
-// Check LDR sensor and print state
-void ldr_sensor_check() {
+const char* ldr_sensor_check() {
   int lightState = digitalRead(ldrPin);
 
   if (lightState == HIGH) {
-    Serial.println("Light Sensor: dark");
+    return "dark";
   } else {
-    Serial.println("Light Sensor: light");
+    return "light";
   }
 }
+

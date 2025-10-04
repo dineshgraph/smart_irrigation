@@ -1,21 +1,24 @@
-// Robocraze Analog pH Sensor Kit
-// ESP32 analog input pin: GPIO35 (ADC1 input-only)
-// Output: Serial Monitor
+// ===== pH Sensor Reference Values =====
+// 1.25V → pH 9   (Alkaline)
+// 1.65V → pH 7   (Neutral)
+// 2.18V → pH 4   (Acidic)
 
-const int phPin = 35;       // ESP32 analog pin connected to pH sensor Po
+const int phPin = 35;  // Analog input pin (ESP32 ADC1_CH7)
 
-int buf[10], temp;
-
-
-void ph_sensor_init() {
-  // Nothing to initialize for analog pin
+// ===== Setup =====
+void setup() {
+  Serial.begin(115200);
+  delay(1000);
   Serial.println("Initializing pH Sensor...");
   pinMode(phPin, INPUT);
   Serial.println("pH Sensor Initialized");
 }
 
-float ph_sensor_check() {
+// ===== Loop =====
+void loop() {
+  int buf[10], temp;
   unsigned long avgValue = 0;
+
   // Step 1: Take 10 readings
   for (int i = 0; i < 10; i++) {
     buf[i] = analogRead(phPin);
@@ -49,12 +52,10 @@ float ph_sensor_check() {
   float phValue = -5.38 * voltage + 15.73;
 
   // Step 6: Print result
- // Serial.print("Voltage: ");
- // Serial.print(voltage, 3);
- // Serial.print(" V  |  pH: ");
- // Serial.println(phValue, 2);
- delay(100);
+  Serial.print("Voltage: ");
+  Serial.print(voltage, 3);
+  Serial.print(" V  |  pH: ");
+  Serial.println(phValue, 2);
 
-
-  return phValue;
+  delay(2000);  // 2 seconds between readings
 }
