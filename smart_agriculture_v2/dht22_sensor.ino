@@ -1,6 +1,6 @@
 #include "DHT.h"
 
-#define DHTPIN 5
+#define DHTPIN 26 // 5
 #define DHTTYPE DHT22   // DHT22 (AM2302)
 
 DHT dht(DHTPIN, DHTTYPE);
@@ -21,18 +21,22 @@ DHTData dht_sensor_check() {
 
   // Validate readings
   if (isnan(data.humidity) || isnan(data.temperature)) {
-    Serial.println("Failed to read from DHT sensor!");
-    data.humidity = -1;
-    data.temperature = -1;
-    return data;
-  }
+    Serial.println("Failed to read from DHT sensor! Retrying...");
+    
+    // Re-initialize DHT
+    dht.begin();
+    delay(1000); // short delay before retry
 
-  // Print readings
-  // Serial.print("Humidity: ");
-  // Serial.print(data.humidity);
-  // Serial.print("%  Temperature: ");
-  // Serial.print(data.temperature);
-  // Serial.println("°C");
+    data.humidity = dht.readHumidity();
+    data.temperature = dht.readTemperature();
+
+    if (isnan(data.humidity) || isnan(data.temperature)) {
+      Serial.println("Second attempt failed. Returning -1");
+      data.humidity = -1;
+      data.temperature = -1;
+      return data;
+    }
+  }
 
   return data;
 }
