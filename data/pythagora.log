@@ -1,0 +1,35 @@
+2025-11-08T17:41:17.957Z INFO SharedStateManager initialized
+2025-11-08T17:41:17.958Z INFO Is remote: false
+2025-11-08T17:41:17.958Z INFO Starting Local. Installation path: /Users/divya/Documents/Arduino/Fire_fighting_robot/Fire_detect_ml
+2025-11-08T17:41:17.958Z INFO [MainProvider] Creating new MainProvider instance...
+2025-11-08T17:41:17.959Z INFO Installation path exists: /Users/divya/Documents/Arduino/Fire_fighting_robot/Fire_detect_ml
+2025-11-08T17:41:17.959Z INFO Initializing database with URL: file:/Users/divya/Documents/Arduino/Fire_fighting_robot/Fire_detect_ml/pythagora-core/data/database/pythagora.db
+2025-11-08T17:41:17.960Z INFO Database file exists, skipping prisma generate/push for faster startup
+2025-11-08T17:41:17.961Z INFO Database initialized successfully
+2025-11-08T17:41:17.961Z INFO [Migration] Checking for database migration...
+2025-11-08T17:41:18.002Z INFO [Migration] No migration needed
+2025-11-08T17:42:22.439Z INFO Closing entire Pythagora extension...
+2025-11-08T17:42:22.442Z ERROR Error closing extension
+Error: Canceled
+Stack: Canceled: Canceled
+    at new MR (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116391)
+    at U4.U (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:121001)
+    at Proxy.s.<computed>.n.charCodeAt.s.<computed> (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:118495)
+    at iy.g (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:41101)
+    at iy.executeCommand (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:40605)
+    at Object.executeCommand (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:201:105071)
+    at closeEntirePythagoraExtension (/Users/divya/.vscode/extensions/pythagoratechnologies.pythagora-vs-code-2.5.30/out/extension.js:538:31)
+    at Object.deactivate (/Users/divya/.vscode/extensions/pythagoratechnologies.pythagora-vs-code-2.5.30/out/extension.js:429:15)
+    at SZ.eb (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:11797)
+    at file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:9947
+    at Array.map (<anonymous>)
+    at SZ.$ (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:9935)
+    at SZ.terminate (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:10178)
+    at H3.terminate (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:120:914)
+    at Ss (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:393:10409)
+    at MessagePortMain.<anonymous> (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:393:6948)
+    at MessagePortMain.emit (node:events:519:28)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949)
+Extra context: {
+  "message": "Canceled"
+}
